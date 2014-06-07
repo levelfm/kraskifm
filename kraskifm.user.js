@@ -1,6 +1,7 @@
 ﻿// ==UserScript==
 // @name            Kraski FM
-// @version         1.1.0.5
+// @homepage        http://userscripts.org/scripts/show/168570
+// @version         1.1.0.4
 // @domain          anon.fm
 // @match           http://anon.fm/*
 // @match           http://anon.fm:8000/*
@@ -8,13 +9,12 @@
 // @match           http://userscripts.org/scripts/show/168570
 // @icon            http://s3.amazonaws.com/uso_ss/icon/168570/thumb.png
 // @downloadURL     http://userscripts.org/scripts/source/168570.user.js
-// @homepage        http://userscripts.org/scripts/show/168570
 // @description     Добавляет краски в вашу жизнь!
 // ==/UserScript==
 
 var kraskiFM = new function() {
 
-var currentVersion = '1.1.0.5'; // CHANGE IT IN HEADER TOO!!!
+var currentVersion = '1.1.0.4'; // CHANGE IT IN HEADER TOO!!!
 var isUserScript = true;
 var doc = null;
 var isMainPageInitialized = false;
