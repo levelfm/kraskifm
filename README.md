@@ -1,6 +1,6 @@
 # Краски ФМ
 
-Скрипт добавляет краски в вашу жизнь. После [установки](https://raw.githubusercontent.com/levelfm/kraskifm/master/kraskifm.user.j) на сайте [anon.fm](http://anon.fm) под сплешем появляется ссылка "Мир в красках!"
+Скрипт добавляет краски в вашу жизнь. После [установки](https://raw.githubusercontent.com/levelfm/kraskifm/master/kraskifm.user.js) на сайте [anon.fm](http://anon.fm) под сплешем появляется ссылка "Мир в красках!"
 
 ## Как использовать?
 
@@ -8,7 +8,7 @@
   * Chrome - [tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
   * Opera - [violent-monkey](https://addons.opera.com/ru/extensions/details/violent-monkey/)
   * Firefox - [greasemonkey](https://addons.mozilla.org/ru/firefox/addon/greasemonkey/)
-1. **Установите [юзерскрипт](https://raw.githubusercontent.com/levelfm/kraskifm/master/kraskifm.user.j)**
+1. **Установите [юзерскрипт](https://raw.githubusercontent.com/levelfm/kraskifm/master/kraskifm.user.js)**
 1. **Перейдите на сайт anon.fm и нажмите ссылку Мир в красках! под сплешем. Или просто откройте страницу [anon.fm/news.html](http://anon.fm/news.html)**
 
 ## Основные возможности
