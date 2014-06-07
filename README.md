@@ -4,12 +4,12 @@
 
 ## Как использовать?
 
-1. **Установите обезьяну**:
+1. Установите обезьяну:
   * Chrome - [tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
   * Opera - [violent-monkey](https://addons.opera.com/ru/extensions/details/violent-monkey/)
   * Firefox - [greasemonkey](https://addons.mozilla.org/ru/firefox/addon/greasemonkey/)
-1. **Установите [юзерскрипт](https://raw.githubusercontent.com/levelfm/kraskifm/master/kraskifm.user.js)**
-1. **Перейдите на сайт anon.fm и нажмите ссылку Мир в красках! под сплешем. Или просто откройте страницу [anon.fm/news.html](http://anon.fm/news.html)**
+1. Установите [юзерскрипт](https://raw.githubusercontent.com/levelfm/kraskifm/master/kraskifm.user.js)
+1. Перейдите на сайт anon.fm и нажмите ссылку Мир в красках! под сплешем. Или просто откройте страницу [anon.fm/news.html](http://anon.fm/news.html)
 
 ## Основные возможности
 
