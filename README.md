@@ -3,4 +3,7 @@ Kraski FM
 
 Скрипт добавляет краски в вашу жизнь. После установки на сайте anon.fm под сплешем появляется ссылка "Мир в красках!"
 
-!(http://s3.amazonaws.com/uso_ss/21705/large.png?1369528946)
+
+![цветовы схемы](http://s3.amazonaws.com/uso_ss/22760/large.png)
+
+# [Установить!](https://raw.githubusercontent.com/levelfm/kraskifm/master/kraskifm.user.js)
