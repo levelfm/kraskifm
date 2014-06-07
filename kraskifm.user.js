@@ -741,7 +741,7 @@ color: $newsFeedFore$ !important;\
       </div>\
       <div class="linksRight">\
         <a href="/board/" target="_blank">Текстаба</a><br>\
-        <a id="scriptLink" href="http://userscripts.org/scripts/show/168570" target="_blank">Юзер&shy;скрипт</a><br>\
+        <a id="scriptLink" href="https://github.com/levelfm/kraskifm" target="_blank">Юзер&shy;скрипт</a><br>\
       </div>\
     </div>\
   </td>\
