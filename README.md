@@ -2,16 +2,6 @@
 
 Скрипт добавляет краски в вашу жизнь.
 
-## Инструкцияпо установке
-
-1. Установите обезьяну:
-  * Chrome - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (если вы до этого устанавливали юзерскрипт без Tapermonkey, то нужно его удалить через Настройки -> Расширения)
-  * Opera - [Violent monkey](https://addons.opera.com/ru/extensions/details/violent-monkey/)
-  * Firefox - [Greasemonkey](https://addons.mozilla.org/ru/firefox/addon/greasemonkey/)
-1. Перезапустите браузер, если это необходимо
-1. Установите [юзерскрипт](https://raw.githubusercontent.com/levelfm/kraskifm/master/kraskifm.user.js)
-1. Перейдите на сайт anon.fm и нажмите ссылку "Мир в красках!" под сплешем. Или просто откройте страницу [anon.fm/news.html](http://anon.fm/news.html)
-
 ## Основные возможности
 
 1. **Выбор одной из трёх цветовых схем**  

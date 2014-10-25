@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Kraski FM
 // @homepage        http://userscripts.org/scripts/show/168570
-// @version         1.1.0.4
+// @version         1.1.0.5
 // @domain          anon.fm
 // @match           http://anon.fm/*
 // @match           http://anon.fm:8000/*
@@ -14,7 +14,7 @@
 
 var kraskiFM = new function() {
 
-var currentVersion = '1.1.0.4'; // CHANGE IT IN HEADER TOO!!!
+var currentVersion = '1.1.0.5'; // CHANGE IT IN HEADER TOO!!!
 var isUserScript = true;
 var doc = null;
 var isMainPageInitialized = false;
