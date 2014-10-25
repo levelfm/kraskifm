@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name            Kraski FM
 // @homepage        http://userscripts.org/scripts/show/168570
 // @version         1.1.0.4
@@ -20,7 +20,7 @@ var doc = null;
 var isMainPageInitialized = false;
 var isInfoPageInitialized = false;
 var isPodcastsPageInitialized = false;
-var kraskiPage = isUserScript ? 'news.html' : 'newdes.html';
+var kraskiPage = isUserScript ? 'userscripts/index.html' : 'newdes.html';
 var splashNow = "";
 var splashDJ = "";
 var title = ["Рефлексивное","Аутичное","Чистое","Дискретность мышления","Когнитивное",
@@ -753,10 +753,10 @@ color: $newsFeedFore$ !important;\
     </div>\
     <center>\
     <div style="padding-top:8px;margin-top:8px">\
-      <a class="playerElement" href="." target="_blank" title="Перейти к старой версии" style="font-size:200%;margin-right:0px">anon.fm</a>\
+      <a class="playerElement" href="/" target="_blank" title="Перейти к старой версии" style="font-size:200%;margin-right:0px">anon.fm</a>\
       <div class="playerElement" id="playerPanel2">\
       </div>\
-      <a class="playerElement" title="Скачать плейлист" href="radio.m3u" target="_blank" style="font-size:smaller;margin-left:24px;font-weight:normal;text-decoration:underline;">M3U</a>\
+      <a class="playerElement" title="Скачать плейлист" href="/radio.m3u" target="_blank" style="font-size:smaller;margin-left:24px;font-weight:normal;text-decoration:underline;">M3U</a>\
     </div>\
     </center>\
     <center>\
@@ -785,7 +785,7 @@ color: $newsFeedFore$ !important;\
           &nbsp;|&nbsp;\
           <a id="feedbackLink" href="/feedback/" target="_blank">Написать диджею</a>\
           &nbsp;|&nbsp;\
-        <a id="refreshLink" href="$kraskiPage$" title="Обновить (без перезагрузки страницы)">&#x21BB;</a>\
+        <a id="refreshLink" href="/$kraskiPage$" title="Обновить (без перезагрузки страницы)">&#x21BB;</a>\
       </div>\
     </center>\
     </div>\
@@ -799,7 +799,7 @@ color: $newsFeedFore$ !important;\
     <div class="tilecontent">\
       <h1>Конфомразь</h1>\
       <div id="radiochan"></div>\
-      <h3>Адрес конфы:<br><a href="xmpp:radiochan@conference.jabber.ru?message" target="_blank">radiochan@conference.jabber.ru</a></h3>\
+      <h3>Адрес конфы:<br><a href="xmpp:radiochan@conference.ezvan.fr?message" target="_blank">radiochan@conference.ezvan.fr</a></h3>\
     </div>\
   </td>\
   <td class="bottomCell" id="kookaPanel" width=50% style="vertical-align:top">\
@@ -812,7 +812,7 @@ color: $newsFeedFore$ !important;\
     <div class="tilecontent">\
       <h1 style="align:left;width:auto">В интернетах</h1>\
       <div id="newsfeed"></div>\
-      <h3>История новостей:<br><a href="xmpp:newsanon@conference.jabber.ru?message" target="_blank">newsanon@conference.jabber.ru</a></h3>\
+      <h3>История новостей:<br><a href="xmpp:newsanon@conference.ezvan.fr?message" target="_blank">newsanon@conference.ezvan.fr</a></h3>\
     </div>\
   </td>\
 </tr>\
@@ -1249,6 +1249,9 @@ function Poller(source, target, timeout, prefix, force) {
             newHtml = prefix + response
           else {
             if (source.indexOf(".js") > 0) {
+              var jsEnd = response.lastIndexOf(']');
+              if (jsEnd >= 0)
+                response = response.substring(0, jsEnd + 1);
               var m = response.match(safeJavaScriptRegex);
               if (m != null && m[0].length == response.length)
                 response = eval("(" + response + ")");
@@ -1965,7 +1968,7 @@ else if (isKraskiPage) {
       }
 
       function refreshPlayNow() {
-        document.getElementById('playnow').src = "radioanon.png?" + new Date().getTime();
+        document.getElementById('playnow').src = "http://anon.fm/radioanon.png?" + new Date().getTime();
       }
 
       function getColorRange(r1, g1, b1, r2, g2, b2, p) {
@@ -2099,7 +2102,7 @@ else if (isKraskiPage) {
         soundCheck.onchange = function() {
           setOption('playSounds', soundCheck.checked ? 1 : 0);
           if (soundCheck.checked)
-            playOgg("newmessage");
+            playOgg("/newmessage");
         }
       }
       else {
@@ -2251,7 +2254,7 @@ else if (isKraskiPage) {
             '</tr>\n';
         }
         r += "</table>";
-        return (r + '<a style="display:block;float:right;margin:10px" href="shed-all.html" target="_blank">' +
+        return (r + '<a style="display:block;float:right;margin:10px" href="/shed-all.html" target="_blank">' +
           filterContent('Архив</a>'));
       }
 
@@ -2324,13 +2327,13 @@ else if (isKraskiPage) {
       }
       
       function updateNews(x) {
-        x = x.split('<p>')
+        x = x.split('<p')
         var newHtml = '';
         for (var i in x) {
           var line = x[i];
           if (line.length > 0 && newsHistory.indexOf(line) < 0) {
             newsHistory.push(line);
-            newHtml += '<p>' + line;
+            newHtml += '<p' + line;
           }
         }
         if (newHtml.length > 0) {
@@ -2382,7 +2385,7 @@ else if (isKraskiPage) {
         if (isUpdate) {
           printKooka();
           if (!wasEmpty && options['playSounds'] == 1)
-            playOgg("newmessage");
+            playOgg("/newmessage");
         }
       }
 

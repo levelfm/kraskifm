@@ -22,13 +22,13 @@
 ![](http://s3.amazonaws.com/uso_ss/25959/large.png)
 1. **Деанон слушателей**  
 ![](http://s3.amazonaws.com/uso_ss/22764/large.png)
-1. **Ссылка на онлайн ча**  
+1. **Ссылка на онлайн чат**  
 ![](http://s3.amazonaws.com/uso_ss/22765/large.png)
 1. **Навигация по записям с плеером и указанием относительного времени и даты**  
 ![](http://s3.amazonaws.com/uso_ss/22919/large.png)
 1. **Просмотр информации о треке с автоматическим исправлением кодировок**  
 ![](http://s3.amazonaws.com/uso_ss/23987/large.png)
-1. **Проигрывание AAC через дополнительные плагин**  
+1. **Проигрывание AAC через дополнительные плагины**  
 ![](http://s3.amazonaws.com/uso_ss/23022/large.png)
 1. **Опция для озвучивания сообщений**  
 ![](http://s3.amazonaws.com/uso_ss/24013/large.png)
