@@ -1172,7 +1172,7 @@ function setOption(key, value){
 function getStandardTime(aTime) {
   if (aTime == null)
     aTime = new Date();
-  return new Date(aTime.getTime() + 4 * 60 * 60 * 1000);
+  return new Date(aTime.getTime() + 3 * 60 * 60 * 1000);
 }
 
 function zeros(v, n) {
