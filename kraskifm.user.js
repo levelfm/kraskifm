@@ -59,10 +59,10 @@ var logoIndex;
 var logoCanvas;
 var preloadAudio = {};
 
-var urlRegex=/\b((?:bitcoin:|callto:|skype:|magnet:|xmpp:|[a-z][a-z\-\.]{1,15}:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/ig;
-
+var urlRegex=/\b(bitcoin:|callto:|skype:|magnet:|xmpp:|[a-z][a-z\-\.]{1,15}:\/\/|www\d{0,3}[.]|([\w][\w-]*([.][\w][\w-]*)+\/))[^\s«»<>“”‘’]*[^\s`!;:'".,?«»<>“”‘’]/ig;
 var safeJavaScriptRegex=/([\[\]\{\}\:\s,0-9]|"([^"\\]|\\.)*")*/;
-var urlPrefixRegex=/bitcoin:|callto:|skype:|magnet:|xmpp:|[a-z][a-z\-\.]{1,15}:\/\//i;
+var urlPrefixRegex=/[a-z][a-z\-\.]{1,15}:/i;
+
 var cp1251 = 
   "ЂЃ‚ѓ„…†‡€‰Љ‹ЊЌЋЏђ‘’“”•–—˜™љ›њќћџ ЎўЈ¤Ґ¦§Ё©Є«¬-®Ї°±Ііґµ¶·ё№є»јЅѕї" +
   "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя";
@@ -2344,8 +2344,29 @@ else if (isKraskiPage) {
 
       function urlify2(text) {
         return text.replace(urlRegex, function(url) {
+
+          var parens = '';
+          var openParens = [0, 0, 0, 0];
+          for (var i = 0; i < url.length; i++) {
+            var parenIndex = '()<>{}[]'.indexOf(url[i]);
+            if (parenIndex < 0)
+              continue;
+            if (parenIndex % 2) {
+              if (!openParens[~~(parenIndex / 2)]--) {
+                parens = url.substring(i);
+                url = url.substring(0, i);
+                break;
+              }
+            }
+            else
+              openParens[~~(parenIndex / 2)]++
+          }
+
           var prefixMatch = urlPrefixRegex.exec(url);
-          return '<a href="' + (prefixMatch != null && prefixMatch.index == 0 ? url : 'http://' + url) + '" target="_blank">' + url + '</a>';
+          return '<a href="' +
+            (prefixMatch != null && prefixMatch.index == 0 ? url : 'http://' + url) +
+            '" target="_blank">' + encodeHtml(url) +
+            '</a>' + parens;
         });
       }
       
