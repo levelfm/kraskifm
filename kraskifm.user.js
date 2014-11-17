@@ -996,7 +996,7 @@ function smartDecode(codes) {
   function getScore(text, isUni) {
     if (text == null)
       return -1000000000;
-    var preText = '?' + text + '?';
+    var preText = '?' + text.replace(/\s/g, ' ') + '?';
     var engText = preText.replace(/[^A-Za-z]/g, ' ');
     var res = 0;
     for (var i = 1; i < preText.length - 1; i++) {
@@ -1006,7 +1006,8 @@ function smartDecode(codes) {
           res++;
       }
       else if (code >= 192 && code < 256) { // Latin+
-        if (engText[i - 1] != ' ' || engText[i + 1] != ' ')
+        if (engText[i - 1] != ' ' || engText[i + 1] != ' ' ||
+          preText[i - 1] == ' ' && preText[i + 1] == ' ')
           res++;
       }
       else if (code >= 1040 && code < 1104) { // Cyrillic
